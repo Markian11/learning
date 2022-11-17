@@ -4,6 +4,15 @@ import tkinter.font as font
 from tkinter.ttk import *
 from turtle import bgcolor
 frame = tkinter.Tk()
+frame.title(" calculator ")
+
+sample_text = tkinter.Entry(frame,width=10,font=('Arial 50'))
+sample_text.place(x=600,y=100)
+
+def button_text(text):
+ sample_text.insert(0, text)
+
+
 
 P1 = tkinter.Button(frame , text = ".", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 M1 = tkinter.Button(frame , text = "+", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
@@ -11,7 +20,7 @@ M2 = tkinter.Button(frame , text = "-", height = 1, width = 3, font= font.Font(s
 M3 = tkinter.Button(frame , text = "x", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 M4 = tkinter.Button(frame , text = "÷", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 M5 = tkinter.Button(frame , text = "=", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
-B1 = tkinter.Button(frame , text = "1", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
+B1 = tkinter.Button(frame , text = "1", command = button_text , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 B2 = tkinter.Button(frame , text = "2", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 B3 = tkinter.Button(frame , text = "3", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 B4 = tkinter.Button(frame , text = "4", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
@@ -30,7 +39,8 @@ B5.place(x=700,y=300)
 B6.place(x=800,y=300)
 B1.place(x=600,y=400)
 B2.place(x=700,y=400)
-B3.place(x=800,y=400)#nukh uilb uyyvy7o8u 908vyulbv87yull
+B0.place(x=600,y=500)
+B3.place(x=800,y=400)
 M1.place(x=700,y=500)
 M2.place(x=800,y=500)
 M3.place(x=900,y=400)
