@@ -13,7 +13,7 @@ def button_text(text):
  sample_text.insert(0, text)
 
 
-
+#helloworld
 P1 = tkinter.Button(frame , text = ".", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 M1 = tkinter.Button(frame , text = "+", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 M2 = tkinter.Button(frame , text = "-", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
