@@ -5,52 +5,70 @@ from tkinter.ttk import *
 from turtle import bgcolor
 frame = tkinter.Tk()
 frame.title(" calculator ")
-
-sample_text = tkinter.Entry(frame,width=10,font=('Arial 50'))
-sample_text.place(x=600,y=100)
+["2","+","3"]
+input_display = tkinter.Entry(frame,width=10,font=('Arial 50'))
+input_display.place(x=600,y=100)
 textlist=["1","2","3"]
 def button_text():
- sample_text.insert(0, ".")
+ input_display.insert("end", ".")
 
 def button_text1():
- sample_text.insert(0, "1")
-
+ input_display.insert("end", "1")
+ 
 def button_text2():
- sample_text.insert(0, "2")
+ input_display.insert("end", "2")
 
 def button_text3():
- sample_text.insert(0, "3")
+ input_display.insert("end","3")
 
 def button_text4():
- sample_text.insert(0, "4")
+ input_display.insert("end", "4")
 
 def button_text5():
- sample_text.insert(0, "5")
+ input_display.insert("end", "5")
 
 def button_text6():
- sample_text.insert(0, "6")
+ input_display.insert("end", "6")
 
 def button_text7():
- sample_text.insert(0, "7")
+ input_display.insert("end", "7")
 
 def button_text8():
- sample_text.insert(0, "8")
+ input_display.insert("end", "8")
 
 def button_text9():
- sample_text.insert(0, "9")
+ input_display.insert("end", "9")
 
 def button_text0():
- sample_text.insert(0, "0")
+ input_display.insert("end", "0")
+
+def button_text10():
+ input_display.insert("end", "+")
+
+def button_text11():
+ input_display.insert("end", "-")
+
+def button_text12():
+ input_display.insert("end", "x")
+
+def button_text13():
+ input_display.insert("end", "÷")
+
+def button_text14():
+ a = input_display.get()
+ b = str(a)
+ print(b)
 
 
 
 
-P1 = tkinter.Button(frame , command=button_text , text = ".", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
-M1 = tkinter.Button(frame , text = "+", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
-M2 = tkinter.Button(frame , text = "-", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
-M3 = tkinter.Button(frame , text = "x", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
-M4 = tkinter.Button(frame , text = "÷", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
-M5 = tkinter.Button(frame , text = "=", height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
+
+P1 = tkinter.Button(frame , command=button_text , text = "." , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
+M1 = tkinter.Button(frame , text = "+", command = button_text10  ,height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
+M2 = tkinter.Button(frame , text = "-", command = button_text11 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
+M3 = tkinter.Button(frame , text = "x", command = button_text12 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
+M4 = tkinter.Button(frame , text = "÷", command = button_text13 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
+M5 = tkinter.Button(frame , text = "=", command = button_text14 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 B1 = tkinter.Button(frame , text = "1", command = button_text1 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 B2 = tkinter.Button(frame , text = "2", command = button_text2 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 B3 = tkinter.Button(frame , text = "3", command = button_text3 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
@@ -78,6 +96,7 @@ M3.place(x=900,y=400)
 M4.place(x=900,y=300)
 M5.place(x=900,y=200)
 P1.place(x=900,y=500)
+
 
 
 frame.mainloop()

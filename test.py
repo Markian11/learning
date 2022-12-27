@@ -8,4 +8,3 @@ if b == False:
     print("number is prime")
 if b == True:
     print("number is not prime")
-2
