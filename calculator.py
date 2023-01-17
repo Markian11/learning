@@ -1,16 +1,16 @@
-import tkinter
-import tkinter.messagebox
-import tkinter.font as font
-from tkinter.ttk import *
+import tkinter # imports tkinter library and etc with import
+import tkinter.messagebox 
+import tkinter.font as font # font is added from the library and etc with form "" import ""
+from tkinter.ttk import * 
 from turtle import bgcolor
-frame = tkinter.Tk()
-frame.title(" calculator ")
-["2","+","3"]
+frame = tkinter.Tk() # makes a screen
+frame.title(" calculator ") # name of the screen
+["2","+","3"] # example code
 input_display = tkinter.Entry(frame,width=10,font=('Arial 50'))
-input_display.place(x=600,y=100)
-textlist=["1","2","3"]
+input_display.place(x=600,y=100) # places the screen where numbers are written
+textlist=["1","2","3"] 
 def button_text():
- input_display.insert("end", ".")
+ input_display.insert("end", ".") # number inserted from for every and each number from 13-57
 
 def button_text1():
  input_display.insert("end", "1")
@@ -55,15 +55,58 @@ def button_text13():
  input_display.insert("end", "÷")
 
 def button_text14():
- a = input_display.get()
- b = str(a)
- print(b)
+    a = input_display.get() #intergers put in the code
+    string = str(a) #converted to string 
+    lst = [] #list boxes line 60-63
+    final_list = []
+    opperator_lst = []
+    storage = []
+    for j in string:
+        if j != "+" and j != "-" and j != "x" and j != "÷": # the values found in the code
+            lst.append(j) # the code that the 4 strings away when written into the code 
+        if j == "+" or j == "-" or j == "x" or j == "÷": # strings taken out
+            opperator_lst.append(j) # puts those values written into the list
+            lst.append("N") # converted to N in the list
+    print(lst) # values shown in the list
+    lst.append("N") # removes N which where the string opperators previously
+    for i in lst:
+        if i != "N": # not equal
+            storage.append(i) #remove N from the list
+        if i == "N": # is equal
+            x="".join(storage) # other values stored in x
+            final_list.append(x) # final list removes N form x
+            storage.clear()
+
+    number_list = [] # List
+    for i in final_list: 
+        number_list.append(int(i)) # every integer in i is appended from final list
+
+    result = number_list[0] 
+    number_list.pop(0) # removes the last value in the list
+
+    for i in range(0, len(number_list)): # combining values that where stored in the list 
+        if opperator_lst[i] == "+": 
+            result = result + number_list[i] # addition
+        if opperator_lst[i] == "-":
+            result = result - number_list[i] # subtraction
+        if opperator_lst[i] == "x":
+            result = result * number_list[i] # multiplication
+        if opperator_lst[i] == "÷":
+            result = result / number_list[i] # division
+            
+    input_display.delete(0,"end") # removes everything apart from the answer
+    input_display.insert("end", result) # gives the answer result
+
+
+    
+    
+   
 
 
 
 
 
-P1 = tkinter.Button(frame , command=button_text , text = "." , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
+P1 = tkinter.Button(frame , command=button_text , text = "." , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white") #the texts frame name, colour and other desccriptions from 109-124
 M1 = tkinter.Button(frame , text = "+", command = button_text10  ,height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 M2 = tkinter.Button(frame , text = "-", command = button_text11 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 M3 = tkinter.Button(frame , text = "x", command = button_text12 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
@@ -80,7 +123,7 @@ B8 = tkinter.Button(frame , text = "8", command = button_text8 , height = 1, wid
 B9 = tkinter.Button(frame , text = "9", command = button_text9 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 B0 = tkinter.Button(frame , text = "0", command = button_text0 , height = 1, width = 3, font= font.Font(size=30), bg= "black", activebackground= "white",fg="white")
 
-B7.place(x=600,y=200)
+B7.place(x=600,y=200) # coordinates of each code from the texts frame from 126-141
 B8.place(x=700,y=200)
 B9.place(x=800,y=200)
 B4.place(x=600,y=300)
@@ -99,4 +142,4 @@ P1.place(x=900,y=500)
 
 
 
-frame.mainloop()
+frame.mainloop() # infinite loop of the window so it never closes
